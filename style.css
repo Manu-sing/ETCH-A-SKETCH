@@ -1,0 +1,23 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.squareitem {
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    border: solid black 1px;
+    
+
+
+}
+
+.hovercolor {
+    background-color: red;
+    transition: all 5s;
+
+}
