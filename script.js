@@ -2,7 +2,11 @@ let container = document.querySelector("#container");
 const bod = document.querySelector('body');
 
 
+
 function makeGrid(rows, cols) {
+
+    let hslColor = 0;
+    let l = 100;
     
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
@@ -15,14 +19,28 @@ function makeGrid(rows, cols) {
 
     newDivs.forEach((div) => {
     
-    div.addEventListener('mouseover', () => {
-        div.classList.add('hovercolor')
+    div.addEventListener('mouseenter', () => {
+
+            if(l == 0) {
+            l = 100;
+            } else {
+            
+            let h = Math.floor(Math.random() * 361);
+            let s = Math.floor(Math.random() * 101);
+            l = l - 1;
+            hslColor = 'hsl('+h+', '+s+'%, '+l+'%)';
+            div.style.backgroundColor = hslColor;
+            
+            }
+        
     })
 })
 
 };
 
-makeGrid (50, 50);
+makeGrid (100, 100);
+
+
 
 
 const button = document.querySelector('button');
@@ -43,6 +61,10 @@ function promptMe(){
 
 function makeNewGrid(userInput, userInput) {
 
+    let hslColor = 0;
+    let l = 100;
+    
+    
     container = document.createElement('div');
     container.setAttribute('id', 'container');
     bod.appendChild(container);
@@ -67,9 +89,19 @@ function makeNewGrid(userInput, userInput) {
     newDivs.forEach((div) => {
     
     div.addEventListener('mouseover', () => {
-        div.classList.add('hovercolor')
+        if(l == 0) {
+            l = 100;
+            } else {
+            
+            let h = Math.floor(Math.random() * 361);
+            let s = Math.floor(Math.random() * 101);
+            l = l - 1;
+            hslColor = 'hsl('+h+', '+s+'%, '+l+'%)';
+            div.style.backgroundColor = hslColor;
+            
+            }
     })
-})
+    })
 
 
 }
